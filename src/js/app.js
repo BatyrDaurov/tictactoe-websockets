@@ -6,8 +6,7 @@ import { chat } from './modules/chat.js';
 import { boardListener } from './modules/board.js';
 
 $(function () {
-  // wss://game-backend-hhff.onrender.com/ws/tictactoe
-  const ws = new WebSocket('ws://localhost:9999/ws/tictactoe');
+  const ws = new WebSocket('wss://game-backend-hhff.onrender.com/ws/tictactoe');
 
   /* ==== Game Listener ==== */
   boardListener(ws);
