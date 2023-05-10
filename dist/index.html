@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Крестики-нолики | Играть онлайн</title>
+</head>
+
+  <body>
+    <div class="container wrapper">
+      <header class="header">
+  <div class="header__container">
+    <h1 class="header__title">Крестики-нолики</h1>
+    <div class="header__center">
+      <span id="room-number" class="header__match">номер комнаты</span>
+    </div>
+    <ol class="list-reset players">
+  <li id="me" class="player active">
+    <div class="player__matches-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <svg width="32" height="30" class="player__user-icon">
+      <use xlink:href="./images/icons/icons.svg#user"></use>
+    </svg>
+    <p id="my-name" class="player__name">user</p>
+  </li>
+  <li id="enemy" class="player">
+    <div class="player__matches-icon">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <svg width="32" height="30" class="player__user-icon">
+      <use xlink:href="./images/icons/icons.svg#user"></use>
+    </svg>
+    <p id="enemy-name" class="player__name">user</p>
+  </li>
+</ol>
+
+  </div>
+</header>
+
+      <main class="page">
+        <div data-observ></div>
+        <div class="login-bg">
+  <div id="login" class="login">
+    <input placeholder="Введите имя" name="name" id="login-name" type="text" class="login__input">
+    <input placeholder="Введите комнату" name="room" id="login-room" type="number" class="login__input">
+    <div class="login__checkbox">
+      <input type="checkbox" id="form-checkbox">
+      <label for="form-checkbox">Подключится к игре </label>
+    </div>
+    <button id="login-btn" class="btn-reset login__btn">Создать комнату</button>
+  </div>
+</div>
+
+        <table class="game-board" id="game-board">
+  <tbody>
+    <tr>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+    </tr>
+    <tr>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+    </tr>
+    <tr>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+      <td><button disabled="disabled" class="btn-reset"></button></td>
+    </tr>
+  </tbody>
+</table>
+ <p id="prompt" class="alert">нажмите на любую ячейку для игры</p>
+
+        <div id="chat" class="chat">
+  <button id="chat-btn" class="chat-btn">
+    <svg width="45" height="45">
+      <use xlink:href="./images/icons/icons.svg#chat-icon"></use>
+    </svg>
+  </button>
+  <div id="chat-list" class="hidden messages">
+    <div class="input-message">
+      <input id="input-message" placeholder="Введите сообщение" type="text">
+    </div>
+    <ul class="list-reset messages__list"></ul>
+  </div>
+</div>
+
+      </main>
+      <footer class="footer">
+  <div class="footer__container"></div>
+</footer>
+
+    </div>
+    <script src="js/app.min.js"></script>
+
+  </body>
+</html>
