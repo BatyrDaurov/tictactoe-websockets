@@ -1,0 +1,39 @@
+.header {
+  margin-top: 140px;
+  margin-bottom: 65px;
+  display: flex;
+  justify-content: center;
+  @include media(767) {
+    margin: 2rem 0;
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  &__title {
+    text-align: center;
+    margin-bottom: 24px;
+    @include media(767) {
+      margin-bottom: 18px;
+    }
+  }
+  &__match {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    padding: 5px 29px;
+    border-radius: 15px;
+    color: var(--body-color);
+    background: var(--primary-yellow-color);
+    @include media(767) {
+      font-size: 22px;
+      line-height: 30px;
+    }
+  }
+  &__center {
+    display: flex;
+    justify-content: center;
+  }
+}
