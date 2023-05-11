@@ -7,11 +7,12 @@ export const formListener = (ws) => {
     let inputRoom = $('#login-room').val();
 
     if ($('#form-checkbox').prop('checked')) {
+      console.log('connect room');
       // Проверяем валидность введенного имени и комнаты
       if (inputName.length > 4 && inputRoom.length > 4) {
         $('#room-number').text(inputRoom);
         // Подключение к созданной комнате
-        ws?.send(
+        ws.send(
           JSON.stringify({
             event: 'room-connect',
             payload: {
@@ -23,13 +24,14 @@ export const formListener = (ws) => {
         closeModal();
       }
     } else {
+      console.log('create room');
       // Номер новой комнаты
       const newRoomId = Date.now();
       // Проверяем валидность введенного имени
       if (inputName.length > 4) {
         $('#room-number').text(newRoomId);
         // Создание собственной игры
-        ws?.send(
+        ws.send(
           JSON.stringify({
             event: 'room-connect',
             payload: {

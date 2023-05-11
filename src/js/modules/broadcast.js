@@ -93,7 +93,8 @@ export const broadcast = (ws) => {
                   },
                 })
               );
-            } else if (checkTie(matrix)) {
+            }
+            if (checkTie(matrix)) {
               ws.send(
                 JSON.stringify({
                   event: 'room-round-tie',
@@ -109,7 +110,8 @@ export const broadcast = (ws) => {
 
         case 'nextRound':
           // Обнуляем доску
-          resetBoard(matrix);
+          matrix = Array(9).fill(null);
+          resetBoard();
 
           // Добавляем в счетчик побед
           if (message.payload.winner === $('#my-name').text()) {
@@ -141,13 +143,14 @@ export const broadcast = (ws) => {
           break;
         case 'roundTie':
           // Обнуляем доску
-          resetBoard(matrix);
+          matrix = Array(9).fill(null);
+          resetBoard();
           alert('Махайтесь до последнего');
           break;
 
         // Конец игры
         case 'endGame':
-          alert(`${message.payload.winner}, won!!!🏆🏆🏆`);
+          alert(`${message.payload.winner}, победил!!!🏆🏆🏆`);
           window.location.reload();
           break;
 
