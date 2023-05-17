@@ -1,6 +1,11 @@
 import { closeModal } from './modal';
 
 export const formListener = (ws) => {
+  // Разрешаем создать комнату при подключении к серверу
+  ws.addEventListener('open', () => {
+    $('#login-btn').text('Создать комнату').removeAttr('disabled');
+  });
+
   // При клике на создать/подключиться кнопку
   $('#login-btn').on('click', () => {
     let inputName = $('#login-name').val();
